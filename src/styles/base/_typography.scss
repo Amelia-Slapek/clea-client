@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin baseFontSettings($fontName, $fontSize, $fontWeight, $color) {
+    font-family: $fontName;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
+}
+
+
+@font-face {
+    font-family: 'MoonbrightDemo';
+    src: url('../../assets/fonts/MoonbrightDemo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Serena';
+    src: url('../../assets/fonts/Serena.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.clea-menu__logo-text {
+    @include baseFontSettings('Serena', 32px, 800, $text);
+}
+
+.clea-menu__link {
+    @include baseFontSettings(Poppins, 18px, 500, $text);
+}
+
+.clea-menu__profile-trigger {
+    @include baseFontSettings(Poppins, 16px, 600, $primary);
+}
+
+.analysis-form-header-title {
+    @include baseFontSettings(Poppins, 40px, 600, $text);
+}
+
+.analysis-form-header-title-highlight {
+    @include baseFontSettings(Poppins, 40px, 600, $secondary);
+}
+
+.analysis-form-description-text,
+.profile-sidebar__nav-label {
+    @include baseFontSettings(Poppins, 16px, 500, $text3);
+}
+
+.analysis-form-input {
+    @include baseFontSettings(Poppins, 14px, 500, $secondary);
+}
+
+.analysis-form-error,
+.register-page__error {
+    @include baseFontSettings(Poppins, 14px, 500, $error);
+}
+
+.analysis-form-button,
+.home-hero__button {
+    @include baseFontSettings(Poppins, 20px, 600, $background3);
+}
+
+.footer-center-links-part-box-link {
+    @include baseFontSettings(Poppins, 16px, 500, $secondary);
+}
+
+.footer-center-links-part-box-link:hover,
+.footer-center-links-part-mail {
+    @include baseFontSettings(Poppins, 16px, 500, $primary);
+}
+
+.home-hero__title {
+    @include baseFontSettings(Poppins, 64px, 600, $text);
+}
+
+.home-hero__title--highlight {
+    @include baseFontSettings('MoonbrightDemo', 96px, 600, $secondary);
+}
+
+.home-hero__description {
+    @include baseFontSettings(Poppins, 20px, 400, $text);
+}
+
+.home-about__title,
+.home-faq__title,
+.results-summary-info-title {
+    @include baseFontSettings(Poppins, 48px, 600, $text);
+}
+
+.home-about__title--highlight,
+.home-faq__title--highlight,
+.results-summary-info-subtitle {
+    @include baseFontSettings(Poppins, 48px, 600, $secondary);
+}
+
+.home-about__description {
+    @include baseFontSettings(Poppins, 20px, 400, $text2);
+}
+
+.home-about__feature-desc,
+.home-guide__step-desc,
+.skincare-report__conflict-desc,
+.profile-alergens__list-item-description,
+.profile-alergens__search-dropdown-empty,
+.articles-page__results-info,
+.container-results-summary-title-header,
+.clea-page-acountPage-menu-list-elem-top-link,
+.login-page__subtitle,
+.product-card__image-placeholder {
+    @include baseFontSettings(Poppins, 14px, 400, $text3);
+}
+
+.home-guide__title {
+    @include baseFontSettings(Poppins, 40px, 800, $text);
+}
+
+.home-guide__title--highlight {
+    @include baseFontSettings(Poppins, 40px, 800, $secondary);
+}
+
+.home-guide__description,
+.category-nav__header {
+    @include baseFontSettings(Poppins, 16px, 500, $text);
+}
+
+.home-guide__step-title {
+    @include baseFontSettings(Poppins, 24px, 800, $text);
+}
+
+.home-faq__question-text,
+.home-faq__answer-text {
+    @include baseFontSettings(Poppins, 20px, 500, $text2);
+}
+
+.category-nav__header--active,
+.register-page__success-email,
+.product-details__attribute-label,
+.product-details__ingredients-header-item {
+    @include baseFontSettings(Poppins, 16px, 600, $secondary);
+}
+
+.category-nav__sub-item,
+.article-comments__input,
+.product-reviews__textarea,
+.register-page__subtitle,
+.reset-password__text,
+.reset-password__subtitle,
+.login-page__modal-input,
+.login-page__modal-desc,
+.login-page__modal-success,
+.product-details__chart-label {
+    @include baseFontSettings(Poppins, 14px, 400, $text2);
+}
+
+.product-card__title,
+.skincare-step__header,
+.article-details__author-name,
+.products-page__sidebar,
+.login-page__modal-btn--cancel {
+    @include baseFontSettings(Poppins, 16px, 600, $text);
+}
+
+.product-card__subtitle,
+.skincare-modal__item-cat,
+.skincare-report__conflict-products,
+.product-card__reviews-count,
+.article-card__date-text,
+.footer-bottom,
+.skincare-step__ingredients {
+    @include baseFontSettings(Poppins, 12px, 400, $text3);
+}
+
+.product-card__tags,
+.article-card__meta,
+.article-card__stat {
+    @include baseFontSettings(Poppins, 12px, 400, $text2);
+}
+
+.btn--product-check,
+.ingredients-list-item-details-description,
+.ingredients-list-item-summary-content-name,
+.ingredients-list-item-summary-content-origin,
+.login-page__label,
+.clea-registration-form-row-label,
+.clea-register-field-label,
+.product-details__ingredient-name,
+.product-details__ingredient-origin,
+.product-details__ingredient-description,
+.register-page__label,
+.reset-password__label {
+    @include baseFontSettings(Poppins, 14px, 500, $text);
+}
+
+.products-page__status-msg,
+.articles-page__no-results,
+.article-details__date-text,
+.article-comments__text,
+.product-reviews__text,
+.article-comments__status,
+.product-reviews__status,
+.register-page__success-text,
+.product-details__review-count,
+.product-details__rating-text,
+.product-details__attribute-value,
+.product-details__description-text {
+    @include baseFontSettings(Poppins, 16px, 400, $text2);
+
+}
+
+.product-details__error {
+    @include baseFontSettings(Poppins, 18px, 400, $text);
+}
+
+.product-details__no-image {
+    @include baseFontSettings(Poppins, 18px, 400, $border);
+}
+
+.product-details__name,
+.product-details__summary-title,
+.product-details__description-title,
+.product-details__analysis-title,
+.profile-favorites__title,
+.article-comments__title,
+.product-reviews__title,
+.skincare__builder-title,
+.register-page__title,
+.login-page__title {
+    @include baseFontSettings(Poppins, 32px, 600, $text);
+}
+
+.products__status-msg--loading,
+.loading,
+.articles-page__loading,
+.articles-page__load-more-btn {
+    @include baseFontSettings(Poppins, 16px, 500, $accent);
+}
+
+.login-page__error {
+    @include baseFontSettings(Poppins, 14px, 600, $error);
+}
+
+.login-page__input,
+.register-page__input,
+.clea-registration-form-row-input {
+    @include baseFontSettings(Poppins, 14px, 400, $secondary);
+}
+
+.login-page__forgot-link,
+.register-page__footer-link,
+.login-page__footer-link,
+.clea-register-toLogin-text-link {
+    @include baseFontSettings(Poppins, 14px, 600, $primary);
+}
+
+.login-page__submit-btn,
+.skincare-report__save-btn,
+.profile-care__create-btn,
+.profile-alergens__search-button,
+.article-details__category,
+.article-details__list-number,
+.article-details__btn,
+.article-comments-modal__btn,
+.product-reviews-modal__btn,
+.login-page__resend-btn,
+.register-page__success-button,
+.verification-page__button,
+.reset-password__button,
+.register-page__verification--button,
+.login-page__modal-btn--submit,
+.profile-account__btn--primary,
+.profile-account__btn-save,
+.register-page__submit-btn {
+    @include baseFontSettings(Poppins, 16px, 600, $background3);
+}
+
+.login-page__footer-text,
+.dropdown-select,
+.login-page__verification,
+.skincare-report__input,
+.skincare-report__textarea,
+.routine-card__description,
+.profile-alergens__search-dropdown-item,
+.article-comments__author-name,
+.product-reviews__author-name,
+.register-page__footer,
+.clea-register-login-text,
+.clea-register-toLogin-text,
+.skincare-modal__close,
+.profile-alergens__list-empty {
+    @include baseFontSettings(Poppins, 14px, 400, $text);
+}
+
+.login-page__modal-title,
+.register-page__verification--paragraph,
+.skincare-report__card-title,
+.reset-password__success-title,
+.footer-center-links-part-header,
+.clea-page-acountPage-menu-user-name-bold {
+    @include baseFontSettings(Poppins, 20px, 600, $text);
+}
+
+.reset-password__title,
+.skincare__report-title,
+.register-page__success-title,
+.verification-page__title,
+.article-details__heading {
+    @include baseFontSettings(Poppins, 28px, 600, $text);
+}
+
+.reset-password__error-msg,
+.skincare-report__alert-desc,
+.routine-menu__option--delete,
+.profile-farticles__error,
+.profile-favorites__error,
+.profile-care__error,
+.profile-alergens__error,
+.skincare-report__alert--name {
+    @include baseFontSettings(Poppins, 14px, 400, $error);
+}
+
+.reset-password__input,
+.clea-menu__dropdown-item,
+.skincare-report__safe-msg,
+.article-details__stat-value,
+.article-comments__date,
+.product-reviews__date {
+    @include baseFontSettings(Poppins, 14px, 500, $text2);
+}
+
+.verification-page__text,
+.skincare__report-status,
+.profile-care__loading,
+.profile-alergens__list-item-name {
+    @include baseFontSettings(Poppins, 16px, 400, $text3);
+}
+
+.clea-register-header-title-color {
+    @include baseFontSettings(Poppins, 32px, 800, $secondary);
+}
+
+.registration-button,
+.list-number {
+    @include baseFontSettings(Poppins, 16px, 400, $background1);
+}
+
+.clea-register-terms-label {
+    @include baseFontSettings(Poppins, 12px, 400, $text);
+}
+
+.clea-register-terms-link {
+    @include baseFontSettings(Poppins, 12px, 400, $secondary);
+}
+
+.register-page__success-footer-text,
+.profile-account__label {
+    @include baseFontSettings(Poppins, 14px, 600, $text3);
+}
+
+.clea-header__profile-name {
+    @include baseFontSettings(Poppins, 20px, 500, $primary);
+}
+
+.results-summary-info-stats {
+    @include baseFontSettings(Poppins, 20px, 500, $text);
+}
+
+.results-summary-info-stats-count {
+    @include baseFontSettings(Poppins, 20px, 500, $secondary);
+}
+
+.results-summary-charts-item-label {
+    @include baseFontSettings(Poppins, 24px, 500, $text);
+}
+
+.circle-text {
+    @include baseFontSettings(Poppins, 40px, 500, $text);
+}
+
+.ingredients-header-description-item,
+.ingredients-header-main-item,
+.routine-card__name {
+    @include baseFontSettings(Poppins, 20px, 600, $secondary);
+}
+
+.ingredients-list-item-summary-content-safety-badge,
+.product-details__ingredient-badge {
+    @include baseFontSettings(Poppins, 16px, 500, $background1);
+}
+
+.unidentified-header-count,
+.product-details__unidentified-header {
+    @include baseFontSettings(Poppins, 32px, 500, $secondary);
+}
+
+.unidentified-header {
+    @include baseFontSettings(Poppins, 32px, 500, $text);
+}
+
+.profile-sidebar__greeting-text {
+    @include baseFontSettings(Poppins, 24px, 400, $text);
+}
+
+.profile-sidebar__greeting-username {
+    @include baseFontSettings(Poppins, 24px, 600, $secondary);
+}
+
+.profile-sidebar-nav-container:hover,
+.category-select {
+    @include baseFontSettings(Poppins, 16px, 400, $secondary);
+}
+
+.stars-label,
+.product-reviews__stars-label,
+.skincare-report__conflict-steps {
+    @include baseFontSettings(Poppins, 14px, 500, $text3);
+}
+
+.article-comments__submit-btn,
+.product-reviews__submit-btn {
+    @include baseFontSettings(Poppins, 20px, 500, $background3);
+}
+
+.article-comments__delete-btn,
+.product-reviews__delete-btn {
+    @include baseFontSettings(Poppins, 12px, 500, $error);
+}
+
+.article-comments__brand-col,
+.product-reviews__brand-col {
+    @include baseFontSettings(Serena, 32px, 400, $text);
+}
+
+.article-comments-modal__title,
+.product-reviews-modal__title,
+.home-about__feature-title,
+.article-heading,
+.skincare-modal__title {
+    @include baseFontSettings(Poppins, 24px, 600, $text);
+}
+
+.article-comments-modal__message,
+.product-reviews-modal__message,
+.profile-account__input,
+.search-input,
+.dropdown-select__value,
+.article-details__paragraph,
+.article-details__list-text,
+.profile-account__checkbox-label {
+    @include baseFontSettings(Poppins, 16px, 400, $text);
+}
+
+.article-card__avatar-placeholder {
+    @include baseFontSettings(Poppins, 14px, 600, $background1);
+}
+
+.article-card__author-name {
+    @include baseFontSettings(Poppins, 12px, 600, $text3);
+}
+
+.clea-menu__login-btn {
+    @include baseFontSettings(Poppins, 18px, 500, $primary);
+}
+
+
+.article-card__stat-value {
+    @include baseFontSettings(Poppins, 12px, 500, $text2);
+}
+
+.article-paragraph,
+.article-details__error {
+    @include baseFontSettings(Poppins, 18px, 400, $text2);
+}
+
+.action-btn {
+    @include baseFontSettings(Poppins, 24px, 500, $background1);
+}
+
+.author-name {
+    @include baseFontSettings(Poppins, 20px, 500, $text3);
+}
+
+.article-card__remove {
+    @include baseFontSettings(Poppins, 12px, 600, $error);
+}
+
+.article-card__no-image {
+    @include baseFontSettings(Poppins, 14px, 400, $border);
+}
+
+.article-card__category-badge,
+.article-card__avatar-placeholder {
+    @include baseFontSettings(Poppins, 12px, 600, $background3);
+}
+
+.article-card__title,
+.unidentified-ingredient-item-name,
+.product-details__unidentified-item {
+    @include baseFontSettings(Poppins, 18px, 600, $text);
+}
+
+.article-detail__no-cover,
+.article-details__avatar-placeholder {
+    @include baseFontSettings(Poppins, 20px, 400, $border);
+}
+
+.article-details__title {
+    @include baseFontSettings(Poppins, 36px, 600, $text);
+}
+
+.article-details__heading {
+    @include baseFontSettings(Poppins, 28px, 600, $text);
+}
+
+.profile-account__error,
+.profile-account__success {
+    @include baseFontSettings(Poppins, 14px, 400, $background3);
+}
+
+.profile-account__avatar-placeholder {
+    @include baseFontSettings(Poppins, 42px, 600, $background3);
+}
+
+.profile-alergens__list-item-name {
+    @include baseFontSettings(Poppins, 18px, 600, $secondary);
+}
+
+.profile-care__title {
+    @include baseFontSettings(Poppins, 32px, 600, $secondary);
+}
+
+.profile-care__empty--paragraph,
+.profile-farticles__empty,
+.profile-favorites__empty {
+    @include baseFontSettings(Poppins, 18px, 400, $text3);
+}
+
+.skincare__builder-add-text {
+    @include baseFontSettings(Poppins, 18px, 600, $background3);
+}
+
+.skincare-step__product-name,
+.skincare-modal__item-name {
+    @include baseFontSettings(Poppins, 14px, 600, $text);
+}
+
+.skincare-report__alert-title,
+.profile-account__btn--secondary,
+.skincare-report__alert--alergen {
+    @include baseFontSettings(Poppins, 16px, 600, $error);
+}

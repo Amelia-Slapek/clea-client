@@ -1,0 +1,106 @@
+@import "../../../styles/core.scss";
+
+.profile-favorites {
+    width: 100%;
+    box-sizing: border-box;
+
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__filters {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        align-items: center;
+    }
+
+    &__filter-item {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+    }
+
+    &__error {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: rgba($error, 0.1);
+        border-left: 2px solid $error;
+        border-radius: 45px;
+    }
+
+    &__products {
+        margin-top: 2rem;
+    }
+
+    &__empty {
+        padding: 4rem 2rem;
+        text-align: center;
+        background: $background3;
+        border-radius: 8px;
+        border: 1px solid $border;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .profile-favorites {
+        &__filters {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+        }
+
+        &__filters> :first-child {
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-favorites {
+        padding: 0;
+
+        &__title {
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        &__filters {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        &__filters> :first-child {
+            grid-column: auto;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+
+    .favorite-product-card {
+        max-width: 100%;
+        margin: 0 auto;
+        width: 100%;
+    }
+}

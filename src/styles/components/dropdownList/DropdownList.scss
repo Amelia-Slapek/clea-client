@@ -1,0 +1,134 @@
+@import "../../../styles/core.scss";
+
+.arrow-icon {
+    transition: transform 0.3s ease;
+    min-width: 14px;
+
+    path {
+        stroke: $text;
+        transition: stroke 0.3s ease;
+    }
+
+    &--rotated {
+        transform: rotate(180deg);
+    }
+}
+
+.category-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+
+    &__item {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: $text;
+
+        &:hover {
+            background-color: $background2;
+        }
+
+        &--active {
+            background: $background2;
+
+            .arrow-icon path {
+                stroke: $background1;
+            }
+        }
+    }
+
+    &__sub-list {
+        padding: 5px 0 5px 15px;
+        border-radius: 0 0 10px 10px;
+        background-color: $background1;
+    }
+
+    &__sub-item {
+        padding: 8px 15px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        margin: 2px 0;
+        color: $text;
+
+        &:hover {
+            background-color: $background2;
+        }
+
+        &--active {
+            background: $background1;
+            color: $accent;
+        }
+    }
+}
+
+.dropdown-select {
+    position: relative;
+    width: 100%;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+        min-height: 50px;
+        background: $background3;
+        border: 1px solid $border;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+
+        &:hover,
+        &.open {
+            border-color: $background2;
+        }
+    }
+
+    &__value {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-right: 10px;
+    }
+
+    &__list {
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        width: 100%;
+        background: $background3;
+        border: 1px solid $border;
+        border-radius: 10px;
+        z-index: 100;
+        max-height: 250px;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    &__item {
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: rgba($secondary, 0.1);
+        }
+
+        &.selected {
+            background-color: $background2;
+            font-weight: 600;
+            color: $secondary;
+        }
+    }
+}

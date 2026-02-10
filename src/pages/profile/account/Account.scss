@@ -1,0 +1,291 @@
+@import "../../../styles/core.scss";
+
+.profile-account {
+    padding: 0;
+    width: 100%;
+
+    &__error,
+    &__success {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
+        line-height: 1.4;
+    }
+
+    &__error {
+        background-color: $error;
+    }
+
+    &__success {
+        background-color: $primary;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__avatar-section {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__avatar-circle-wrapper {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        background-color: $border;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__avatar-placeholder {
+        background-color: $secondary;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+
+    &__avatar-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    &__btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 100%;
+
+        &--primary {
+            background-color: $secondary;
+            border: 1px solid $secondary;
+
+            &:hover {
+                background-color: darken($secondary, 10%);
+            }
+        }
+
+        &--secondary {
+            background-color: $background3;
+            border: 1px solid $error;
+            color: $error;
+
+            &:hover {
+                background-color: rgba($error, 0.1);
+            }
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+                border-color: $border;
+            }
+        }
+    }
+
+    &__data-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: start;
+        width: 100%;
+
+        &--split {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__data-column,
+    &__password-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        min-width: 0;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__label {
+        margin-bottom: 0.5rem;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__input {
+        width: 100%;
+        min-height: 50px;
+        padding: 0 1rem;
+        border: 1px solid $border;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+
+        &:focus {
+            border-color: $secondary;
+        }
+
+        &--has-icon {
+            padding-right: 3rem;
+        }
+    }
+
+    &__password-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+
+        img {
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover img {
+            opacity: 1;
+            filter: brightness(0) saturate(100%) invert(47%) sepia(98%) saturate(1234%) hue-rotate(334deg) brightness(95%) contrast(92%);
+        }
+    }
+
+    &__checkbox-field {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+    }
+
+    &__checkbox {
+        width: 20px;
+        height: 20px;
+        accent-color: $secondary;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    &__checkbox-label {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__actions {
+        width: 100%;
+        padding-top: 1rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &__btn-save {
+        min-height: 50px;
+        padding: 0 3rem;
+        background-color: $secondary;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover:not(:disabled) {
+            background-color: darken($secondary, 10%);
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .profile-account {
+        &__data-section--split {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-account {
+        &__avatar-section {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+        }
+
+        &__avatar-circle-wrapper {
+            width: 100px;
+            height: 100px;
+        }
+
+        &__avatar-actions {
+            flex-direction: column;
+            width: 100%;
+            gap: 0.75rem;
+        }
+
+        &__btn {
+            width: 100%;
+            padding: 1rem;
+        }
+
+        &__data-section {
+            gap: 1.5rem;
+        }
+
+        &__actions {
+            justify-content: center;
+        }
+
+        &__btn-save {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+}

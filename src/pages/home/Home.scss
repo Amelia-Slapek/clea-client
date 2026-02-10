@@ -1,0 +1,498 @@
+@import "../../styles/core.scss";
+
+@mixin responsive-container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.home-hero {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    min-height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    gap: 5rem;
+
+    &__content {
+        grid-column: 1 / 4;
+        grid-row: 1;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 5%;
+        gap: 20px;
+        width: 80%;
+    }
+
+    &__title {
+        margin: 0;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    &__title--highlight {
+        text-transform: lowercase;
+        display: block;
+    }
+
+    &__button {
+        border-radius: 20px;
+        min-height: 60px;
+        width: 100%;
+        max-width: 300px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: $primary;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-transform: uppercase;
+        color: $background3;
+
+        &:hover {
+            background-color: darken($primary, 10%);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &__image {
+        grid-column: 3 / 7;
+        grid-row: 1;
+        z-index: 1;
+        background-image: url("../../assets/WOMAN.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+.home-about {
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 5%;
+    min-height: 600px;
+    align-items: center;
+
+    &__image {
+        height: 100%;
+        min-height: 400px;
+        background-image: url("../../assets/SKINCARE.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-right: 5%;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        margin: 0;
+    }
+
+    &__description {
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    &__features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap: 2.5rem;
+    }
+
+    &__feature-item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__feature-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__feature-icon {
+        width: 45px;
+        height: auto;
+    }
+
+    &__feature-title {
+        margin: 0;
+    }
+
+    &__feature-desc {
+        margin: 0;
+        line-height: 1.5;
+    }
+}
+
+.home-guide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 800px;
+    gap: 5%;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    align-items: center;
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+        background-image: url("../../assets/CAREPLAN.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding-left: 5%;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__description {
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    &__timeline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__step {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    &__step-icon {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+
+    &__step-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__step-title {
+        margin: 0;
+    }
+
+    &__step-desc {
+        margin: 0;
+        line-height: 1.5;
+    }
+}
+
+.home-faq {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    gap: 3rem;
+    box-sizing: border-box;
+
+    &__header {
+        text-align: center;
+        width: 100%;
+    }
+
+    &__title {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__item {
+        background-color: $background1;
+        border: 2px solid $accent;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        &--active {
+            background-color: $background2;
+            color: $secondary;
+            border-color: $secondary;
+
+
+            .home-faq__arrow {
+                transform: rotate(180deg);
+                filter: invert(0.2) sepia(1) saturate(2) hue-rotate(210deg) brightness(0.8);
+            }
+
+            .home-faq__answer-block {
+                max-height: 500px;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &__item-container {
+        padding: 0 1.5rem;
+    }
+
+    &__question-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 0 0 0;
+        padding-bottom: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        text-align: left;
+    }
+
+    &__arrow {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__answer-block {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(-5px);
+    }
+
+    &__divider {
+        border: none;
+        height: 1px;
+        background-color: rgba($secondary, 0.2);
+        margin: 0 0 1rem 0;
+        width: 100%;
+    }
+
+    &__answer-text {
+        display: block;
+        margin: 0 0 1.5rem 0;
+
+    }
+}
+
+@media (max-width: 1024px) {
+    .home-hero {
+        min-height: auto;
+        padding-bottom: 2rem;
+        display: flex;
+        align-items: center;
+
+        &__content {
+            padding-left: 5%;
+            padding-right: 5%;
+            width: 100%;
+        }
+
+        &__image {
+            display: none;
+        }
+    }
+
+    .home-guide {
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-hero {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+        min-height: auto;
+
+        &__content {
+            width: 100%;
+            padding: 2rem;
+            grid-column: auto;
+            grid-row: auto;
+            align-items: center;
+            text-align: center;
+        }
+
+        &__image {
+            width: 100%;
+            height: 40vh;
+            min-height: 300px;
+            grid-column: auto;
+            grid-row: auto;
+            background-position: center top;
+        }
+
+        &__button {
+            width: 100%;
+        }
+    }
+
+    .home-about {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 3rem;
+        padding: 3rem 20px;
+
+        &__image {
+            display: block;
+            width: 100%;
+            height: 300px;
+            min-height: auto;
+            order: -1;
+            background-size: contain;
+        }
+
+        &__content {
+            padding-right: 0;
+        }
+
+        &__title {
+            justify-content: center;
+        }
+
+        &__description {
+            text-align: center;
+        }
+
+
+        &__features {
+            grid-template-columns: 1fr;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    }
+
+    .home-guide {
+        grid-template-columns: 1fr;
+        padding: 2rem 20px;
+
+        &__image {
+            display: block;
+            height: 300px;
+            min-height: auto;
+            order: -1;
+        }
+
+        &__content {
+            padding-left: 0;
+        }
+
+        &__header {
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    .home-faq {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-hero {
+        &__title {
+            font-size: 28px !important;
+        }
+
+        &__title--highlight {
+            font-size: 42px !important;
+        }
+
+        &__image {
+            height: 300px;
+        }
+    }
+
+    .home-about {
+        &__title {
+            font-size: 28px !important;
+        }
+
+        &__title--highlight {
+            font-size: 28px !important;
+        }
+
+        &__feature-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .home-guide {
+        &__title {
+            font-size: 28px !important;
+        }
+
+        &__title--highlight {
+            font-size: 28px !important;
+        }
+
+        &__step {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    .home-faq {
+        &__title {
+            font-size: 24px !important;
+        }
+
+        &__question-text {
+            font-size: 16px;
+        }
+    }
+}

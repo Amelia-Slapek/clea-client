@@ -1,0 +1,426 @@
+@import "../../styles/core.scss";
+
+.skincare {
+    min-height: calc(100vh - 200px);
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+    &__container {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 600px) {
+            padding: 0 10px;
+            gap: 1.5rem;
+        }
+    }
+
+    &__builder {
+        width: 100%;
+
+        &-title {
+            margin-bottom: 2rem;
+
+            @media (max-width: 480px) {
+                font-size: 1.5rem;
+                word-wrap: break-word;
+            }
+        }
+
+        &-controls {
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        &-time {
+            position: relative;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        &-add-btn {
+            width: 100%;
+            height: 60px;
+            background: $accent;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: darken($accent, 10%);
+            }
+        }
+    }
+
+    .skincare-step {
+        background: transparent;
+        border: 1px solid $accent;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+
+        &__header {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        &__body {
+            display: grid;
+            grid-template-columns: 200px 1fr 50px;
+            gap: 1rem;
+            align-items: center;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                grid-template-columns: 80px 1fr 40px;
+            }
+        }
+
+        &__image-wrapper {
+            margin: 0;
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.02);
+
+            @media (max-width: 768px) {
+                height: 80px;
+            }
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        &__info {
+            min-width: 0;
+            width: 100%;
+        }
+
+        &__product-name {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            word-wrap: break-word;
+        }
+
+        &__ingredients {
+            line-height: 1.6;
+            margin: 0;
+            font-size: 0.9rem;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        &__remove-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: $accent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__report {
+        width: 100%;
+        box-sizing: border-box;
+
+        &-title {
+            margin-bottom: 1.5rem;
+        }
+
+        &-status {
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid $border;
+
+            &--loading {
+                color: $accent;
+            }
+        }
+    }
+
+    .skincare-report {
+        &__card {
+            background: $background3;
+            border: 1px solid $accent;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            box-sizing: border-box;
+
+            @media (max-width: 480px) {
+                padding: 1rem;
+            }
+        }
+
+        &__card-title {
+            margin-bottom: 1rem;
+        }
+
+        &__alert {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+            border-radius: 4px;
+            background: rgba($error, 0.05);
+            margin-bottom: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+
+            @media (max-width: 500px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            &-desc {
+                margin: 0.25rem 0;
+                word-break: break-word;
+            }
+        }
+
+        &__conflict {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid $accent;
+            width: 100%;
+            box-sizing: border-box;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &-info {
+                flex: 1;
+                min-width: 0;
+            }
+
+            &-pair {
+                font-weight: 700;
+                font-family: "Poppins";
+                font-size: 16px;
+                margin: 0 0 0.25rem 0;
+                word-wrap: break-word;
+            }
+
+            &-desc {
+                margin: 0.25rem 0;
+                font-size: 0.9rem;
+                color: $text;
+            }
+
+            &-steps {
+                margin-top: 0.5rem;
+            }
+        }
+
+        &__form {
+            background: $background3;
+            border: 1px solid $accent;
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+
+            @media (max-width: 480px) {
+                padding: 1rem;
+            }
+        }
+
+        &__input,
+        &__textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.75rem;
+            border: 1px solid $border;
+            border-radius: 5px;
+
+            &:focus {
+                border-color: $secondary;
+                outline: none;
+            }
+        }
+
+        &__textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        &__save-btn {
+            width: 100%;
+            padding: 1rem;
+            background: $secondary;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: darken($secondary, 10%);
+            }
+        }
+    }
+}
+
+.skincare-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    &__content {
+        background: $background3;
+        border-radius: 10px;
+        padding: 2rem;
+        width: 100%;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+
+        @media (max-width: 480px) {
+            padding: 1.5rem 1rem;
+        }
+    }
+
+    &__search {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    &__item {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        border: 1px solid $border;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+        box-sizing: border-box;
+
+        @media (max-width: 480px) {
+            padding: 0.5rem;
+        }
+
+        &:hover {
+            background: $background1;
+            border-color: $accent;
+        }
+
+        &-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            flex-shrink: 0;
+
+            @media (max-width: 480px) {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        &-info {
+            min-width: 0;
+            flex: 1;
+        }
+
+        &-name {
+            word-wrap: break-word;
+        }
+    }
+
+    &__item-name,
+    &__item-cat {
+        margin: 0;
+    }
+
+    &__close {
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 1rem;
+        background: $background2;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 500px) {
+    .skincare-step {
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        &__image-wrapper {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        &__info {
+            text-align: center;
+            width: 100%;
+        }
+
+        &__remove-btn {
+            position: absolute;
+            top: -5px;
+            right: 0;
+        }
+    }
+}

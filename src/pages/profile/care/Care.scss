@@ -1,0 +1,195 @@
+@import "../../../styles/core.scss";
+
+.profile-care {
+    &__error {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: rgba($error, 0.1);
+        border-left: 2px solid $error;
+        border-radius: 4px;
+    }
+
+    &__loading {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    &__section {
+        margin-bottom: 3rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    &__empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+        text-align: center;
+
+        &--paragraph {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__create-btn {
+        padding: 1rem 2rem;
+        background-color: $secondary;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: darken($secondary, 10%);
+        }
+    }
+}
+
+.routine-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid $accent;
+    border-radius: 10px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba($accent, 0.05);
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__name {
+        margin: 0;
+        text-align: left;
+
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+
+    &__description {
+        margin: 0;
+        text-align: left;
+        line-height: 1.5;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.routine-menu {
+    position: relative;
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 0.5rem;
+        background: $background3;
+        border: 1px solid $border;
+        border-radius: 5px;
+        z-index: 10;
+        min-width: 120px;
+        overflow: hidden;
+    }
+
+    &__option {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: rgba($error, 0.1);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .profile-care {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-care {
+        &__title {
+            font-size: 24px;
+        }
+
+        &__grid {
+            gap: 1rem;
+        }
+    }
+
+    .routine-card {
+        padding: 1rem;
+        gap: 0.75rem;
+
+        &__icon img {
+            width: 45px;
+            height: 45px;
+        }
+
+        &__name {
+            font-size: 16px;
+        }
+
+        &__description {
+            font-size: 13px;
+        }
+    }
+}

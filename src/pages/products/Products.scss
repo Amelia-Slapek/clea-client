@@ -1,0 +1,135 @@
+@import "../../styles/core.scss";
+
+.products-page {
+    background-color: $background1;
+
+    &__container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        gap: 40px;
+        min-height: 100vh;
+    }
+
+    &__sidebar {
+        background: $background3;
+        border-radius: 10px;
+        padding: 25px;
+        height: fit-content;
+    }
+
+    &__filter-group {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__filters-top {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    &__dropdown-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    &__status-msg {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 80px 20px;
+        background: $background3;
+        border-radius: 10px;
+    }
+
+    &__load-more-container {
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    &__load-more-btn {
+        padding: 12px 35px;
+        background-color: $background2;
+        color: $secondary;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: transform 0.2s, background-color 0.2s;
+
+        &:hover {
+            color: $background3;
+            background-color: darken($secondary, 10%);
+        }
+
+    }
+}
+
+@media (max-width: 1200px) {
+    .products-page {
+        &__container {
+            grid-template-columns: 260px 1fr;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .products-page {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+
+        &__sidebar {
+            position: static;
+            margin-bottom: 30px;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .products-page {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__filters-top {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .products-page {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+
+        &__sidebar {
+            padding: 15px;
+        }
+    }
+}

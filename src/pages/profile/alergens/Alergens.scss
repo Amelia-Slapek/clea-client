@@ -1,0 +1,208 @@
+@import "../../../styles/core.scss";
+
+.profile-alergens {
+    width: 100%;
+    box-sizing: border-box;
+
+    &__search {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        align-items: flex-start;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .search-container {
+        position: relative;
+        flex: 1;
+        min-width: 200px;
+        z-index: 100;
+    }
+
+    &__search-dropdown {
+        position: absolute;
+        top: calc(100% + 5px);
+        bottom: auto;
+        left: 0;
+        right: 0;
+        background: $background3;
+        border: 1px solid $border;
+        border-radius: 10px;
+        max-height: 250px;
+        overflow-y: auto;
+        z-index: 101;
+        width: 100%;
+        box-sizing: border-box;
+
+    }
+
+    &__search-dropdown-item {
+        padding: 12px 15px;
+        cursor: pointer;
+        transition: background 0.2s;
+        border-bottom: 1px solid $background2;
+
+        &:hover {
+            background-color: $background2;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__search-dropdown-empty {
+        padding: 15px;
+        text-align: center;
+    }
+
+    &__search-button {
+        height: 50px;
+        padding: 0 2rem;
+        background-color: $secondary;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover:not(:disabled) {
+            background-color: darken($secondary, 10%);
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background-color: $border;
+        }
+    }
+
+    &__error {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: rgba($error, 0.1);
+        border-left: 2px solid $error;
+        border-radius: 5px;
+    }
+
+    &__list {
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    &__list-empty {
+        padding: 2rem;
+        text-align: center;
+        background-color: $background1;
+        border-radius: 10px;
+    }
+
+    &__list-item {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    &__list-item-divider {
+        height: 1px;
+        border: none;
+        background-color: $border;
+        margin: 0 0 1.5rem 0;
+        width: 100%;
+    }
+
+    &__list-item-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    &__list-item-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__list-item-name {
+        margin-bottom: 0.5rem;
+        word-wrap: break-word;
+    }
+
+    &__list-item-description {
+        line-height: 1.6;
+        margin: 0;
+        word-wrap: break-word;
+    }
+
+    &__list-item-remove {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: $background3;
+        border: 1px solid $secondary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        img {
+            width: 14px;
+            height: 14px;
+            filter: brightness(0) saturate(100%) invert(29%) sepia(55%) saturate(543%) hue-rotate(149deg) brightness(93%) contrast(89%);
+        }
+
+        &:hover {
+            background-color: $secondary;
+
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-alergens {
+
+        &__search {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__search-button {
+            width: 100%;
+            height: 50px;
+        }
+
+        &__list-item-content {
+            align-items: center;
+        }
+
+        &__list-item-name {
+            font-size: 16px;
+        }
+
+        &__list-item-description {
+            font-size: 13px;
+        }
+    }
+}
