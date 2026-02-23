@@ -244,7 +244,7 @@ export const SkinCarePage = () => {
                                             <div className="skincare-report__alert">
                                                 <img src={warningIcon} alt="!" />
                                                 <div>
-                                                    <h4 className="skincare-report__alert--alergen">Wykrytolergeny!</h4>
+                                                    <h4 className="skincare-report__alert--alergen">Wykryto alergeny!</h4>
                                                     {compatibilityReport.allergenWarnings.map((w, i) => <p className="skincare-report__alert--name" key={i}><strong>{w.ingredientName}</strong> w {w.productName}</p>)}
                                                 </div>
                                             </div>
