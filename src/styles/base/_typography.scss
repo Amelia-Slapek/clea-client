@@ -71,11 +71,11 @@
 }
 
 .home-hero__title {
-    @include baseFontSettings(Poppins, 64px, 600, $text);
+    @include baseFontSettings(Poppins, 60px, 600, $text);
 }
 
 .home-hero__title--highlight {
-    @include baseFontSettings('MoonbrightDemo', 96px, 600, $secondary);
+    @include baseFontSettings('MoonbrightDemo', 86px, 600, $secondary);
 }
 
 .home-hero__description {
